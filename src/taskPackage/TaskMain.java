@@ -1,25 +1,23 @@
 package taskPackage;
 
-import com.priya.task;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class taskMain {
+public class TaskMain {
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        taskOperation taskObj =  new taskOperation();
+        TaskManager manager = new TaskManager();
         int option = -1;
 
-        while(option!=5) {
+        while (option != 6) {
             System.out.println("\n\nChoose Option for the Task App: \n");
             System.out.println("1. Add Task ");
             System.out.println("2. List Tasks ");
             System.out.println("3. Search by Task Name");
             System.out.println("4. Delete Task");
-            System.out.println("5. Exit Menu");
+            System.out.println("5. Search by ID ");
+            System.out.println("6. Exit Menu");
 
             option = scanner.nextInt();
             switch (option) {
@@ -32,49 +30,62 @@ public class taskMain {
                     System.out.println("Enter Due Date : ");
                     String due = scanner.nextLine();
                     LocalDate date = LocalDate.parse(due);
-                    //System.out.println(name+" "+description+" "+due);
                     System.out.println("Enter Task Status (INITIAL, IN_PROGRESS, DONE) : ");
                     String st = scanner.nextLine();
-                    taskStatus status = taskStatus.valueOf(st);
-                    //System.out.println(status);
-                    taskObj.addTask(name,description,date,status);
+                    TaskStatus status = TaskStatus.valueOf(st);
+                    manager.addTask(name, description, date, status);
                     break;
                 }
 
-                case 2:
-                {
+                case 2: {
                     System.out.println("List of Task are as follows : ");
-                    taskObj.listTasks();
+                    String object = manager.listTasks();
+                    System.out.println(object);
                     break;
                 }
 
-                case 3:
-                {
+                case 3: {
                     System.out.println("Enter Task Name to Search");
                     String searchName = scanner.next();
-                    //System.out.println(searchName);
-                    taskObj.searchTask(searchName);
+                    TaskBody object = manager.searchTask(searchName);
+                    if (object == null)
+                        System.out.println("!!!   NO SUCH DATA FOUND   !!!");
+                    else
+                        System.out.println(object);
                     break;
                 }
 
-                case 4:
-                {
+                case 4: {
                     System.out.println("\nEnter Task Name to Delete");
                     String delName = scanner.next();
-                    // System.out.println(delName);
-                    taskObj.deleteTask(delName);
+                    int result = manager.deleteTask(delName);
+                    if (result == 1) {
+                        System.out.println("Deleted");
+                    } else
+                        System.out.println("!!! NO SUCH DATA FOUND !!! ");
                     break;
                 }
 
                 case 5: {
+                    System.out.println("Enter Task ID to Search");
+                    int searchId = scanner.nextInt();
+                    TaskBody object = manager.searchTaskByID(searchId);
+                    if (object == null)
+                        System.out.println("!!!   NO SUCH DATA FOUND   !!!");
+                    else
+                        System.out.println(object);
+                    break;
+                }
+
+                case 6: {
                     System.out.println("Exiting Menu");
                     System.exit(0);
                     break;
                 }
 
-                default:
-                {
+                default: {
                     System.out.println("!!!  WRONG OPTION   !!!\nEnter Correct Option Again");
+                    break;
                 }
             }
         }

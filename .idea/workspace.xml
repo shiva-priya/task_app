@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0509a536-e1cf-4361-8b09-55e85fcaab91" name="Default Changelist" comment="" />
+    <list default="true" id="0509a536-e1cf-4361-8b09-55e85fcaab91" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taskPackage/TaskBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taskPackage/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/task_app/taskPackage/taskClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/task_app/taskPackage/taskMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/task_app/taskPackage/taskOperation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/taskPackage/taskClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/taskPackage/taskMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/taskPackage/TaskMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/taskPackage/taskOperation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/taskPackage/taskStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/taskPackage/TaskStatus.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,13 +27,20 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VNF2F5hv59GAAVokXfH8anp18W" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="Application.taskMain">
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.TaskMain">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.priya.Main" />
       <module name="task_app" />
@@ -32,8 +51,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="taskMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="taskPackage.taskMain" />
+    <configuration name="TaskMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="taskPackage.TaskMain" />
       <module name="task_app" />
       <extension name="coverage">
         <pattern>
@@ -47,11 +66,11 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.taskMain" />
+      <item itemvalue="Application.TaskMain" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.taskMain" />
+        <item itemvalue="Application.TaskMain" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -81,27 +100,38 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1320" height="542" key="GridCell.Tab.0.bottom" timestamp="1577101892203">
+    <state width="1320" height="233" key="GridCell.Tab.0.bottom" timestamp="1577173606378">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="542" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577101892203" />
-    <state width="1320" height="542" key="GridCell.Tab.0.center" timestamp="1577101892202">
+    <state width="1320" height="233" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577173606378" />
+    <state width="1320" height="233" key="GridCell.Tab.0.center" timestamp="1577173606377">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="542" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577101892202" />
-    <state width="1320" height="542" key="GridCell.Tab.0.left" timestamp="1577101892202">
+    <state width="1320" height="233" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577173606377" />
+    <state width="1320" height="233" key="GridCell.Tab.0.left" timestamp="1577173606377">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="542" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577101892202" />
-    <state width="1320" height="542" key="GridCell.Tab.0.right" timestamp="1577101892203">
+    <state width="1320" height="233" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577173606377" />
+    <state width="1320" height="233" key="GridCell.Tab.0.right" timestamp="1577173606378">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="542" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577101892203" />
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1577085445590">
+    <state width="1320" height="233" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577173606378" />
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1577161163035">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1577085445590" />
+    <state x="339" y="225" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1577161163035" />
     <state x="347" y="175" key="run.anything.popup" timestamp="1577090688143">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
