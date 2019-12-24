@@ -1,0 +1,8 @@
+        Iterator<TaskBody> dataIterator = taskData.iterator();
+        TaskBody object = null;
+        String result = "";
+        while (dataIterator.hasNext()) {
+            object = dataIterator.next();
+            result += object;
+            System.out.println(taskData);
+        }

@@ -2,24 +2,21 @@ package taskPackage;
 
 import java.time.LocalDate;
 
-public class TaskBody {
+public class Task {
 
     private String taskName;
     private String description;
     private LocalDate dueDate;
     private TaskStatus status;
     private int id;
-    private static int taskCount = 1;
 
-
-    TaskBody(String taskName, String description, LocalDate dueDate, TaskStatus status) {
+    Task(String taskName, String description, LocalDate dueDate, TaskStatus status, int id) {
         this.taskName = taskName;
         this.description = description;
         this.dueDate = dueDate;
         this.status = status;
-        this.id = taskCount++;
+        this.id = id;
     }
-
 
     public String getTaskName() {
         return taskName;
@@ -37,14 +34,14 @@ public class TaskBody {
         return status;
     }
 
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
+
     public String toString() {
-        String result = "Task ID :"+id+"\nTask Name :" + taskName + "\nTask Description :" + "\nTask Due Date : " +
-                dueDate + "\nTask Status : " + status + "\n\n";
+        String result = "\nTask ID :" + id + "\nTask Name :" + taskName + "\nTask Description :" + "\nTask Due Date : " +
+                dueDate + "\nTask Status : " + status + "\n";
         return result;
     }
 

@@ -7,54 +7,52 @@ import java.util.List;
 
 public class TaskManager {
 
-    List<TaskBody> taskData = new LinkedList<>();
+    List<Task> taskData = new LinkedList<>();
+    int taskCount = 0;
 
     public void addTask(String taskName, String description, LocalDate dueDate, TaskStatus status) {
-        taskData.add(new TaskBody(taskName, description, dueDate, status));
+        taskData.add(new Task(taskName, description, dueDate, status, ++taskCount));
     }
 
-    public String listTasks() {
-        Iterator<TaskBody> dataIterator = taskData.iterator();
-        TaskBody object = null;
-        String result = "";
-        while (dataIterator.hasNext()) {
-            object = dataIterator.next();
-            result += object;
-        }
-        return result;
+    public List<Task> listTasks() {
+        return taskData;
     }
 
-    public TaskBody searchTask(String key) {
-        TaskBody object = null;
-        Iterator<TaskBody> dataIterator = taskData.iterator();
-        while (dataIterator.hasNext()) {
-            object = dataIterator.next();
-            String name = object.getTaskName();
-            if (name.equals(key)) {
-                return object;
+    public Task searchTask(String key) {
+        Task object = null;
+        for (Task t : taskData) {
+            if (t.getTaskName().equals(key)) {
+                object = t;
             }
         }
         return object;
     }
 
-    public TaskBody searchTaskByID(int key) {
-        TaskBody object = null;
-        Iterator<TaskBody> dataIterator = taskData.iterator();
-        while (dataIterator.hasNext()) {
-            object = dataIterator.next();
-            int id = object.getId();
-            if (id==key) {
-                return object;
+    public Task searchByTaskID(int key) {
+        Task object = null;
+        for (Task t : taskData) {
+            if (t.getId() == key) {
+                object = t;
             }
         }
         return object;
+    }
+
+    public List<Task> listByStatus(String status) {
+        List<Task> statusList = new LinkedList<>();
+        for (Task t : taskData) {
+            if (t.getStatus().toString().equals(status)) {
+                statusList.add(t);
+            }
+        }
+        return statusList;
     }
 
     public int deleteTask(String name) {
         int flag = 0;
-        Iterator<TaskBody> dataIterator = taskData.iterator();
+        Iterator<Task> dataIterator = taskData.iterator();
         while (dataIterator.hasNext()) {
-            TaskBody obj = dataIterator.next();
+            Task obj = dataIterator.next();
             String tname = obj.getTaskName();
             if (name.equals(tname)) {
                 taskData.remove(obj);
@@ -62,6 +60,10 @@ public class TaskManager {
             }
         }
         return flag;
+    }
+
+    public int getTaskCount() {
+        return taskCount;
     }
 
 
