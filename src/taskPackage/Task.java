@@ -1,12 +1,15 @@
 package taskPackage;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.SimpleTimeZone;
 
 public class Task {
 
     private String taskName;
     private String description;
-    private String dueDate;
+    private Date dueDate;
     private TaskStatus status;
     private int id;
 
@@ -15,7 +18,7 @@ public class Task {
 
 
 
-    Task(String taskName, String description, String dueDate, TaskStatus status, int id) {
+    Task(String taskName, String description, Date dueDate, TaskStatus status, int id) {
         this.taskName = taskName;
         this.description = description;
         this.dueDate = dueDate;
@@ -41,11 +44,11 @@ public class Task {
         this.id = id;
     }
 
-    public String getDueDate() {
+    public Date getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(String dueDate) {
+    public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
     }
 
@@ -66,8 +69,9 @@ public class Task {
     }
 
     public String toString() {
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd/MM/yyyy");
         String result = "\nTask ID :" + id + "\nTask Name :" + taskName + "\nTask Description :" +description+ "\nTask Due Date : " +
-                dueDate + "\nTask Status : " + status + "\n";
+                simpleDateFormat.format(dueDate) + "\nTask Status : " + status + "\n";
         return result;
     }
 

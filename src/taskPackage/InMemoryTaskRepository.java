@@ -1,6 +1,7 @@
 package taskPackage;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,7 +10,7 @@ public class InMemoryTaskRepository {
 
     List<Task> taskData = new LinkedList<>();
 
-    public void addTask(String taskName, String description, String dueDate, TaskStatus status, int id) {
+    public void addTask(String taskName, String description, Date dueDate, TaskStatus status, int id) {
         taskData.add(new Task(taskName, description, dueDate, status, id));
     }
 

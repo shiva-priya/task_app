@@ -6,12 +6,15 @@ import jdk.nashorn.internal.parser.JSONParser;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.Date;
 
 public class TaskFileRepository implements TaskRepository {
 
-    private static final String TASKS_JSON_FILE = "/home/priyad/Desktop/tasks2.json";
+    private static final String TASKS_JSON_FILE = "/home/priyad/Desktop/Jtasks.json";
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
@@ -47,7 +50,7 @@ public class TaskFileRepository implements TaskRepository {
 
 
     @Override
-    public void addTask(String taskName, String description, String dueDate, TaskStatus status,int id) {
+    public void addTask(String taskName, String description, Date dueDate, TaskStatus status,int id) {
         taskData.add(new Task(taskName, description, dueDate, status, id));
         writeToFile(taskData);
 
@@ -117,6 +120,39 @@ public class TaskFileRepository implements TaskRepository {
         }
         writeToFile(taskData);
         return flag;
+    }
+
+    @Override
+    public List<Task> getPendingTasks() {
+        taskData = readFromFile();
+        List<Task> pendingTaskList = new LinkedList<>();
+        for (Task t : taskData) {
+            if (t.getStatus().toString().equals("INITIAL") || t.getStatus().toString().equals("IN_PROGRESS")) {
+                pendingTaskList.add(t);
+            }
+        }
+        return pendingTaskList;
+    }
+
+    @Override
+    public List<Task> getTodayTasks() {
+        taskData = readFromFile();
+        List<Task> pendingTaskList = new LinkedList<>();
+        for (Task t : taskData) {
+          Date dt = t.getDueDate();
+            SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd/MM/yyyy");
+            try {
+                //System.out.println(simpleDateFormat.parse(simpleDateFormat.format(new Date())));
+
+                if(dt.equals(simpleDateFormat.parse(simpleDateFormat.format(new Date())))) {
+                    pendingTaskList.add(t);
+                }
+                } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return pendingTaskList;
     }
 
 

@@ -1,25 +1,31 @@
 package taskPackage;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class TaskMain {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws ParseException {
         Scanner scanner = new Scanner(System.in);
         TaskManager manager = new TaskManager();
         int option = -1;
 
-        while (option != 7) {
+        while (option != 9) {
             System.out.println("\n\nChoose Option for the Task App: \n");
             System.out.println("1. Add Task ");
             System.out.println("2. List Tasks ");
             System.out.println("3. Search by Task Name");
             System.out.println("4. Delete Task");
-            System.out.println("5. Search by ID ");
+            System.out.println("5. Search Task by ID ");
             System.out.println("6. List By Task Status");
-            System.out.println("7. Exit Menu");
+            System.out.println("7. Pending Tasks");
+            System.out.println("8. Today's Tasks");
+            System.out.println("9. Exit Menu");
 
             option = scanner.nextInt();
             switch (option) {
@@ -29,23 +35,28 @@ public class TaskMain {
                     scanner.nextLine();
                     System.out.println("Enter Task Description : ");
                     String description = scanner.nextLine();
-                    System.out.println("Enter Due Date : ");
+                    System.out.println("Enter Due Date (DD/MM/YYYY) : ");
                     String due = scanner.nextLine();
-                    //LocalDate date = LocalDate.parse(due);
-                    System.out.println(due);
+                    Date dt = new SimpleDateFormat("dd/MM/yyyy").parse(due);
+                    System.out.println(dt);
                     System.out.println("Enter Task Status : ");
                     for (TaskStatus value : TaskStatus.values()) {
                         System.out.print(value + " | ");
                     }
                     String st = scanner.nextLine();
                     TaskStatus status = TaskStatus.valueOf(st);
-                    manager.addTask(name, description, due, status);
+                    manager.addTask(name, description, dt, status);
                     break;
                 }
 
                 case 2: {
                     System.out.println("List of Task are as follows : ");
                     List<Task> object = manager.listTasks();
+                    if(object.size()<1)
+                    {
+                        System.out.println("\n!!! NO TASKS PRESENT !!!");
+                    }
+                    else
                     System.out.println(object);
                     break;
                 }
@@ -92,6 +103,17 @@ public class TaskMain {
                 }
 
                 case 7: {
+                    System.out.println("List of Pending Tasks are : ");
+                    System.out.println(manager.getPendingTasks());
+                    break;
+                }
+                case 8: {
+                    System.out.println("Today's Tasks are : ");
+                    System.out.println(manager.getTodayTasks());
+                    break;
+                }
+
+                case 9: {
                     System.out.println("Exiting Menu");
                     System.exit(0);
                     break;
