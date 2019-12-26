@@ -7,31 +7,33 @@ import java.util.List;
 
 public class TaskManager {
 
-   InMemoryTaskRepository inMemory = new InMemoryTaskRepository();
-    int taskCount = 0;
+ //  InMemoryTaskRepository inMemory = new InMemoryTaskRepository();
+    TaskFileRepository repository = new TaskFileRepository();
+    static int taskCount = 0;
 
-    public void addTask(String taskName, String description, LocalDate dueDate, TaskStatus status) {
-        inMemory.addTask(taskName, description, dueDate, status, ++taskCount);
+    public void addTask(String taskName, String description, String dueDate, TaskStatus status) {
+        repository.addTask(taskName, description, dueDate, status, ++taskCount);
     }
 
     public List<Task> listTasks() {
-        return inMemory.listTasks();
+        return repository.listTasks();
     }
 
     public Task searchTask(String key) {
-       return inMemory.searchTask(key);
+       return repository.searchTask(key);
     }
 
     public Task searchByTaskID(int key) {
-        return inMemory.searchByTaskID(key);
+        return repository.searchByTaskID(key);
     }
 
+
     public List<Task> listByStatus(String status) {
-        return inMemory.listByStatus(status);
+        return repository.listByStatus(status);
     }
 
     public int deleteTask(String name) {
-      return inMemory.deleteTask(name);
+      return repository.deleteTask(name);
     }
 
     public int getTaskCount() {

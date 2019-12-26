@@ -31,14 +31,15 @@ public class TaskMain {
                     String description = scanner.nextLine();
                     System.out.println("Enter Due Date : ");
                     String due = scanner.nextLine();
-                    LocalDate date = LocalDate.parse(due);
+                    //LocalDate date = LocalDate.parse(due);
+                    System.out.println(due);
                     System.out.println("Enter Task Status : ");
                     for (TaskStatus value : TaskStatus.values()) {
                         System.out.print(value + " | ");
                     }
                     String st = scanner.nextLine();
                     TaskStatus status = TaskStatus.valueOf(st);
-                    manager.addTask(name, description, date, status);
+                    manager.addTask(name, description, due, status);
                     break;
                 }
 

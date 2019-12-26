@@ -9,7 +9,7 @@ public class InMemoryTaskRepository {
 
     List<Task> taskData = new LinkedList<>();
 
-    public void addTask(String taskName, String description, LocalDate dueDate, TaskStatus status, int id) {
+    public void addTask(String taskName, String description, String dueDate, TaskStatus status, int id) {
         taskData.add(new Task(taskName, description, dueDate, status, id));
     }
 

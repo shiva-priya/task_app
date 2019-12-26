@@ -6,16 +6,47 @@ public class Task {
 
     private String taskName;
     private String description;
-    private LocalDate dueDate;
+    private String dueDate;
     private TaskStatus status;
     private int id;
 
-    Task(String taskName, String description, LocalDate dueDate, TaskStatus status, int id) {
+    public Task(){
+    }
+
+
+
+    Task(String taskName, String description, String dueDate, TaskStatus status, int id) {
         this.taskName = taskName;
         this.description = description;
         this.dueDate = dueDate;
         this.status = status;
         this.id = id;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
     }
 
     public String getTaskName() {
@@ -26,10 +57,6 @@ public class Task {
         return description;
     }
 
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
     public TaskStatus getStatus() {
         return status;
     }
@@ -38,9 +65,8 @@ public class Task {
         return id;
     }
 
-
     public String toString() {
-        String result = "\nTask ID :" + id + "\nTask Name :" + taskName + "\nTask Description :" + "\nTask Due Date : " +
+        String result = "\nTask ID :" + id + "\nTask Name :" + taskName + "\nTask Description :" +description+ "\nTask Due Date : " +
                 dueDate + "\nTask Status : " + status + "\n";
         return result;
     }
