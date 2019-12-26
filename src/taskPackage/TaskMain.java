@@ -15,17 +15,18 @@ public class TaskMain {
         TaskManager manager = new TaskManager();
         int option = -1;
 
-        while (option != 9) {
+        while (option != 10) {
             System.out.println("\n\nChoose Option for the Task App: \n");
             System.out.println("1. Add Task ");
             System.out.println("2. List Tasks ");
-            System.out.println("3. Search by Task Name");
+            System.out.println("3. Search By Name");
             System.out.println("4. Delete Task");
-            System.out.println("5. Search Task by ID ");
-            System.out.println("6. List By Task Status");
+            System.out.println("5. Search By ID ");
+            System.out.println("6. List By Status");
             System.out.println("7. Pending Tasks");
             System.out.println("8. Today's Tasks");
-            System.out.println("9. Exit Menu");
+            System.out.println("9. Update Task");
+            System.out.println("10. Exit Menu");
 
             option = scanner.nextInt();
             switch (option) {
@@ -114,6 +115,26 @@ public class TaskMain {
                 }
 
                 case 9: {
+                    System.out.print("Enter the Task Name to Update  :  ");
+                    scanner.nextLine();
+                    String task = scanner.next();
+                    System.out.println(task);
+                    System.out.println("Enter New Status of task "+task);
+                    for (TaskStatus value : TaskStatus.values()) {
+                        System.out.print(value + " | ");
+                    }
+                    scanner.nextLine();
+                    String st = scanner.nextLine();
+                    TaskStatus status = TaskStatus.valueOf(st);
+                    int res = manager.updateTask(task, status);
+                    if(res==0)
+                        System.out.println("!!! NO SUCH DATA TO UPDATE !!!");
+                    else
+                        System.out.println("Updated : "+task);
+                    break;
+                }
+
+                case 10: {
                     System.out.println("Exiting Menu");
                     System.exit(0);
                     break;

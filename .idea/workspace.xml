@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/task_app/taskPackage/TaskFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_app/taskPackage/TaskFileRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/task_app/taskPackage/TaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_app/taskPackage/TaskManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/task_app/taskPackage/TaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/task_app/taskPackage/TaskRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/taskPackage/InMemoryTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/taskPackage/InMemoryTaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/taskPackage/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/taskPackage/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/taskPackage/TaskFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/taskPackage/TaskFileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/taskPackage/TaskMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/taskPackage/TaskMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/taskPackage/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/taskPackage/TaskManager.java" afterDir="false" />
@@ -134,22 +132,22 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="461" y="155" width="424" height="574" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1577333214735" />
-    <state width="1320" height="560" key="GridCell.Tab.0.bottom" timestamp="1577355166899">
+    <state width="1320" height="468" key="GridCell.Tab.0.bottom" timestamp="1577358289252">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577355166899" />
-    <state width="1320" height="560" key="GridCell.Tab.0.center" timestamp="1577355166898">
+    <state width="1320" height="468" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577358289252" />
+    <state width="1320" height="468" key="GridCell.Tab.0.center" timestamp="1577358289251">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577355166898" />
-    <state width="1320" height="560" key="GridCell.Tab.0.left" timestamp="1577355166896">
+    <state width="1320" height="468" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577358289251" />
+    <state width="1320" height="468" key="GridCell.Tab.0.left" timestamp="1577358289251">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577355166896" />
-    <state width="1320" height="560" key="GridCell.Tab.0.right" timestamp="1577355166899">
+    <state width="1320" height="468" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577358289251" />
+    <state width="1320" height="468" key="GridCell.Tab.0.right" timestamp="1577358289251">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="560" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577355166899" />
+    <state width="1320" height="468" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577358289251" />
     <state width="1320" height="219" key="GridCell.Tab.1.bottom" timestamp="1577341943065">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

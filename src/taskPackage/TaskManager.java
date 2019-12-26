@@ -42,6 +42,10 @@ public class TaskManager {
         return repository.getTodayTasks();
     }
 
+    public int updateTask(String task, TaskStatus status){
+        return repository.updateTask(task, status);
+    }
+
 
 
     public int getTaskCount() {

@@ -155,5 +155,21 @@ public class TaskFileRepository implements TaskRepository {
         return pendingTaskList;
     }
 
+    public int updateTask(String task, TaskStatus status)
+    {
+        int flag=0;
+        taskData = readFromFile();
+        Task object = null;
+        for (Task t: taskData) {
+            if(t.getTaskName().equals(task))
+            {
+                t.setStatus(status);
+                flag = 1;
+            }
+        }
+        writeToFile(taskData);
+        return flag;
+    }
+
 
 }

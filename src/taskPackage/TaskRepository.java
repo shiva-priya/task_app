@@ -14,5 +14,6 @@ public interface TaskRepository {
     public int deleteTask(String name);
     public List<Task> getPendingTasks();
     public List<Task> getTodayTasks();
+    public int updateTask(String task, TaskStatus status);
 
 }
