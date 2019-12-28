@@ -1,12 +1,13 @@
 package taskPackage;
 
-import java.time.LocalDate;
 import java.util.*;
 
 public class TaskManager {
 
- //  InMemoryTaskRepository inMemory = new InMemoryTaskRepository();
-    TaskFileRepository repository = new TaskFileRepository();
+    //  InMemoryTaskRepository inMemory = new InMemoryTaskRepository();
+    //   TaskFileRepository repository = new TaskFileRepository();
+
+    TaskDataBaseRepository repository = new TaskDataBaseRepository();
     Random random = new Random();
 
     public void addTask(String taskName, String description, Date dueDate, TaskStatus status) {
@@ -18,7 +19,7 @@ public class TaskManager {
     }
 
     public Task searchTask(String key) {
-       return repository.searchTask(key);
+        return repository.searchTask(key);
     }
 
     public Task searchByTaskID(int key) {
@@ -31,7 +32,7 @@ public class TaskManager {
     }
 
     public int deleteTask(String name) {
-      return repository.deleteTask(name);
+        return repository.deleteTask(name);
     }
 
     public List<Task> getPendingTasks() {
@@ -42,10 +43,9 @@ public class TaskManager {
         return repository.getTodayTasks();
     }
 
-    public int updateTask(String task, TaskStatus status){
+    public int updateTask(String task, TaskStatus status) {
         return repository.updateTask(task, status);
     }
-
 
 
     public int getTaskCount() {

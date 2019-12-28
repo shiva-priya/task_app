@@ -13,9 +13,8 @@ public class Task {
     private TaskStatus status;
     private int id;
 
-    public Task(){
+    public Task() {
     }
-
 
 
     Task(String taskName, String description, Date dueDate, TaskStatus status, int id) {
@@ -33,7 +32,6 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
 
     public void setStatus(TaskStatus status) {
@@ -69,8 +67,8 @@ public class Task {
     }
 
     public String toString() {
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd/MM/yyyy");
-        String result = "\nTask ID :" + id + "\nTask Name :" + taskName + "\nTask Description :" +description+ "\nTask Due Date : " +
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String result = "\nTask ID :" + id + "\nTask Name :" + taskName + "\nTask Description :" + description + "\nTask Due Date : " +
                 simpleDateFormat.format(dueDate) + "\nTask Status : " + status + "\n";
         return result;
     }

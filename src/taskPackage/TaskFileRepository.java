@@ -50,7 +50,7 @@ public class TaskFileRepository implements TaskRepository {
 
 
     @Override
-    public void addTask(String taskName, String description, Date dueDate, TaskStatus status,int id) {
+    public void addTask(String taskName, String description, Date dueDate, TaskStatus status, int id) {
         taskData.add(new Task(taskName, description, dueDate, status, id));
         writeToFile(taskData);
 
@@ -66,26 +66,23 @@ public class TaskFileRepository implements TaskRepository {
     }
 
     @Override
-    public Task searchTask(String key)
-    {
+    public Task searchTask(String key) {
         taskData = readFromFile();
         Task object = null;
-        for (Task t: taskData) {
-            if(t.getTaskName().equals(key))
-            {
+        for (Task t : taskData) {
+            if (t.getTaskName().equals(key)) {
                 object = t;
             }
         }
-       return object;
+        return object;
     }
 
     @Override
     public Task searchByTaskID(int key) {
         taskData = readFromFile();
         Task object = null;
-        for (Task t: taskData) {
-            if(t.getId() == key)
-            {
+        for (Task t : taskData) {
+            if (t.getId() == key) {
                 object = t;
             }
         }
@@ -109,12 +106,11 @@ public class TaskFileRepository implements TaskRepository {
         int flag = 0;
         taskData = readFromFile();
         Task object = null;
-        for (Task t: taskData) {
-            if(t.getTaskName().equals(name))
-            {
+        for (Task t : taskData) {
+            if (t.getTaskName().equals(name)) {
                 taskData.remove(t);
                 //System.out.println(taskData);
-                flag=1;
+                flag = 1;
                 break;
             }
         }
@@ -139,15 +135,15 @@ public class TaskFileRepository implements TaskRepository {
         taskData = readFromFile();
         List<Task> pendingTaskList = new LinkedList<>();
         for (Task t : taskData) {
-          Date dt = t.getDueDate();
-            SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd/MM/yyyy");
+            Date dt = t.getDueDate();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
             try {
                 //System.out.println(simpleDateFormat.parse(simpleDateFormat.format(new Date())));
 
-                if(dt.equals(simpleDateFormat.parse(simpleDateFormat.format(new Date())))) {
+                if (dt.equals(simpleDateFormat.parse(simpleDateFormat.format(new Date())))) {
                     pendingTaskList.add(t);
                 }
-                } catch (ParseException e) {
+            } catch (ParseException e) {
                 e.printStackTrace();
             }
 
@@ -155,14 +151,12 @@ public class TaskFileRepository implements TaskRepository {
         return pendingTaskList;
     }
 
-    public int updateTask(String task, TaskStatus status)
-    {
-        int flag=0;
+    public int updateTask(String task, TaskStatus status) {
+        int flag = 0;
         taskData = readFromFile();
         Task object = null;
-        for (Task t: taskData) {
-            if(t.getTaskName().equals(task))
-            {
+        for (Task t : taskData) {
+            if (t.getTaskName().equals(task)) {
                 t.setStatus(status);
                 flag = 1;
             }

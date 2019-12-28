@@ -53,12 +53,10 @@ public class TaskMain {
                 case 2: {
                     System.out.println("List of Task are as follows : ");
                     List<Task> object = manager.listTasks();
-                    if(object.size()<1)
-                    {
+                    if (object.size() < 1) {
                         System.out.println("\n!!! NO TASKS PRESENT !!!");
-                    }
-                    else
-                    System.out.println(object);
+                    } else
+                        System.out.println(object);
                     break;
                 }
 
@@ -99,7 +97,10 @@ public class TaskMain {
                     System.out.println("Enter Status of Task to Search : ");
                     String status = scanner.next();
                     List<Task> result = manager.listByStatus(status);
-                    System.out.println(result);
+                    if (result == null)
+                        System.out.println("!!!   NO SUCH DATA FOUND   !!!");
+                    else
+                        System.out.println(result);
                     break;
                 }
 
@@ -119,7 +120,7 @@ public class TaskMain {
                     scanner.nextLine();
                     String task = scanner.next();
                     System.out.println(task);
-                    System.out.println("Enter New Status of task "+task);
+                    System.out.println("Enter New Status of task " + task);
                     for (TaskStatus value : TaskStatus.values()) {
                         System.out.print(value + " | ");
                     }
@@ -127,10 +128,10 @@ public class TaskMain {
                     String st = scanner.nextLine();
                     TaskStatus status = TaskStatus.valueOf(st);
                     int res = manager.updateTask(task, status);
-                    if(res==0)
+                    if (res == 0)
                         System.out.println("!!! NO SUCH DATA TO UPDATE !!!");
                     else
-                        System.out.println("Updated : "+task);
+                        System.out.println("Updated : " + task);
                     break;
                 }
 

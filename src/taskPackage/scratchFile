@@ -6,3 +6,9 @@
             result += object;
             System.out.println(taskData);
         }
+
+
+    create table taskdb.task(
+    taskName varchar(60), description varchar(100), dueDate date, status varchar(10), id int );
+
+        insert into task (taskName, descrption dueDate, status, id) values

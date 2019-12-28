@@ -1,12 +1,13 @@
 package taskPackage;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 public interface TaskRepository {
 
-    public void addTask(String taskName, String description, Date dueDate, TaskStatus status, int id);
+    public void addTask(String taskName, String description, Date dueDate, TaskStatus status, int id) throws ClassNotFoundException, SQLException;
     public List<Task> listTasks();
     public Task searchTask(String key);
     public Task searchByTaskID(int key);
